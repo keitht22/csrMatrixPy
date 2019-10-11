@@ -4,14 +4,15 @@ import sys
 import networkx as nx
 
 def readInput(filename):
-	f = mmread(filename)
-	f = f.toarray()
-	print(f)
+	# output is implemented to __main__ as variable 'mat'
+	a = mmread(filename)
+	b = a.toarray()
 	c = csr_matrix(f)
 	return c
 
 if __name__ == "__main__":
-	#"./3elt_dual.mtx"
-	filen = sys.argv[1]
-	#print(sys.argv[0], sys.argv[1])
-	mat = readInput(filen)
+	# "./3elt_dual.mtx"
+	fileN = input('Enter an mtx file path: ')
+	mat = readInput(fileN)
+	return mat
+	G = nx.DiGraph()
